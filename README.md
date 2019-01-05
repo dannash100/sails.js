@@ -1,7 +1,7 @@
 # sails.js
 learning sails.js
 
-**Enable automatic routes**: ```config/blueprints``` ```actions: true```
+**enable automatic routes**: ```config/blueprints``` ```actions: true```
 
 ## routing
 
