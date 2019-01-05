@@ -14,10 +14,10 @@ learning sails.js
 
 ## model
 
-- object representing a resource such as a mysql table, containing:
+object representing a resource such as a mysql table containing:
 
-  - attributes: describe properties that the database will be tasked with managing. i.e columns in a table.
-  - methods: built-in functions to find and manipulate records
-  - settings: contain configurable properties like connection/datastore to specify database and settings for migrations & schema.
-  - adapter: node.js module that allows model to communicate with a particular database
+- attributes: describe properties that the database will be tasked with managing. i.e columns in a table.
+- methods: built-in functions to find and manipulate records
+- settings: contain configurable properties like connection/datastore to specify database and settings for migrations & schema.
+- adapter: node.js module that allows model to communicate with a particular database
 
