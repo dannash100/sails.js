@@ -1,6 +1,8 @@
 # sails.js
 learning sails.js
 
+**Enable automatic routes**: ```config/blueprints``` ```actions: true```
+
 ## routing
 
 - when a request hits the Sails back-end, the request is compared with the apps configured routes. The first matching route is triggered which calls a corresponding controller action responsible for carrying out the requirements of the request.
