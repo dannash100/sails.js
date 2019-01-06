@@ -1,4 +1,4 @@
-# first-app
+# bushfire
 
 a [Sails v1](https://sailsjs.com) application
 
@@ -14,7 +14,7 @@ a [Sails v1](https://sailsjs.com) application
 
 ### Version info
 
-This app was originally generated on Sun Jan 06 2019 00:27:11 GMT+1300 (NZDT) using Sails v1.1.0.
+This app was originally generated on Sun Jan 06 2019 21:25:29 GMT+1300 (NZDT) using Sails v1.1.0.
 
 <!-- Internally, Sails used [`sails-generate@1.16.4`](https://github.com/balderdashy/sails-generate/tree/v1.16.4/lib/core-generators/new). -->
 
