@@ -89,14 +89,13 @@ module.exports = {
 
 ## controllers
 
-_sails generate controller_
-
 - organize actions into controller file.
 - or use stand alone actions in nested subfolders.
 
 ## models
 
 - represents a set of structured data called records.
+- can be ac
 
 ```js
 module.exports = {
