@@ -89,7 +89,7 @@ module.exports = {
 - or use stand alone actions in nested subfolders.
 -
 
-## connecting to your mysql db
+## connecting to mysql db
 
 
 - `yarn add sails-mysql`
@@ -106,8 +106,12 @@ module.exports.datastores = {
 - `sails generate model model_name`
 
 
-### routing
+## routing
 
 - automatic: in `config/blueprints.js` set actions to true.
 - manual: bind routes manually in config/routes `POST /route/to/hit': 'action/to/hit`
 [see official docs](https://sailsjs.com/documentation/concepts/actions-and-controllers/routing-to-actions)
+
+## config
+
+- local.js takes precedence over all other config settings, use this to store settings like database or email passwords that apply only to you not the organization
