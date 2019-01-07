@@ -35,7 +35,7 @@ object representing a resource such as a mysql table containing:
 
 ### actions
 
-_generate stand alone action subfolder/action_name_
+- generate stand alone action: `generate action subfolder/action_name`
 
 - from sails documentation:
 
@@ -87,15 +87,18 @@ module.exports = {
 };
 ```
 
-### controllers
+## controllers
 
 _sails generate controller_
 
 - organize actions into controller file.
 - or use stand alone actions in nested subfolders.
--
 
-## connecting to mysql db
+## models
+
+- represents a set of structured data called records.
+
+### connecting to mysql db
 
 - `yarn add sails-mysql`
 
@@ -182,3 +185,9 @@ module.exports = {
 };
 
 ```
+
+## middleware
+
+- code that runs before or after your route-handling code
+- sails is compatible with express middleware.
+- defined in `config/http.js`
