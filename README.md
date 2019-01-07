@@ -127,7 +127,7 @@ module.exports.datastores = {
 - when using the default receiver uploads go to `App/.tmp/uploads/
 - upload to a custom folder providing a dirname setting to upload with a path resolve to `sails.config.appPath, 'where/to/save'`
 - files are uploaded to HTTP web servers as file parameters.
-- [official docs for details] https://sailsjs.com/documentation/concepts/file-uploads
+- [official docs for details](https://sailsjs.com/documentation/concepts/file-uploads)
 
 ```js
 req.file("filename").upload({
@@ -145,8 +145,13 @@ req.file("filename").upload({
 ## helpers
 
 - use helpers to avoid code repeat
+```js
+const greeting = await sails.helpers.helperName.with({name: 'Dan' });
+```
 - helpers use ```exits.success``` in place of ```return```
 - `api/helpers/helper-name.js`
+- async by default turn of with `sync: true`
+- [see official docs for details on advanced exception handling](https://sailsjs.com/documentation/concepts/helpers)
 
 ```js
 module.exports = {
