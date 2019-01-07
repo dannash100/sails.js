@@ -98,6 +98,17 @@ _sails generate controller_
 
 - represents a set of structured data called records.
 
+```js
+module.exports = {
+  attributes: {
+    nameOnMenu: { type: 'string', required: true },
+    price: { type: 'string', required: true },
+    percentRealMeat: { type: 'number', defaultsTo: 20, columnType: 'FLOAT' },
+    numCalories: { type: 'number' },
+  },
+};
+```
+
 ### connecting to mysql db
 
 - `yarn add sails-mysql`
