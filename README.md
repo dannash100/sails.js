@@ -8,7 +8,7 @@ learning sails.js
 - when a request hits the Sails back-end, the request is compared with the apps configured routes. The first matching route is triggered which calls a corresponding controller action responsible for carrying out the requirements of the request.
 
 ```javascript
-'GET / ' : 
+'/': { view: 'pages/homepage' }
 ```
 
 ### shadow routes
