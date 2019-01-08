@@ -6,10 +6,15 @@
  */
 
 module.exports = {
-
   attributes: {
-    name: { type: 'string', required: true },
-    age: { type: 'number', required: true },
+    name: {
+      type: 'string',
+      required: true
+    },
+    age: {
+      type: 'number',
+      required: true
+    },
     createdAt: {
       type: 'ref',
       columnType: 'datetime'
@@ -17,8 +22,6 @@ module.exports = {
     updatedAt: {
       type: 'ref',
       columnType: 'datetime'
-    },
-  },
-
+    }
+  }
 };
-

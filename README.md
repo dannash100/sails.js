@@ -95,7 +95,6 @@ module.exports = {
 ## models
 
 - represents a set of structured data called records.
-- can be ac
 
 ```js
 module.exports = {
@@ -106,6 +105,29 @@ module.exports = {
     numCalories: { type: 'number' },
   },
 };
+```
+
+### associations
+
+- in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
+- depending on type of link, associative attributes can be set in a create or update call and specilized model methods.
+- associations are not always returned when retreiving records with `.find()` instead you declare which  associations to retreive by using the `populate()` method
+```js
+var userWithPets = await User.findOne(123).populate('pets');
+```
+
+- add a reference to another model in a **many to many** relationship
+```js
+// models/User.js
+ pets: {
+      collection: 'pet',
+      via: 'owners'
+    }
+// models/Pets.js
+  owners: {
+      collection: 'user',
+      via: 'pets'
+    }
 ```
 
 ### connecting to mysql db
