@@ -112,9 +112,6 @@ module.exports = {
 - in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
 - depending on type of link, associative attributes can be set in a create or update call and specilized model methods.
 - associations are not always returned when retreiving records with `.find()` instead you declare which  associations to retreive by using the `populate()` method
-```js
-var userWithPets = await User.findOne(123).populate('pets');
-```
 
 - add a reference to another model in a **many to many** relationship
 ```js
@@ -128,6 +125,11 @@ var userWithPets = await User.findOne(123).populate('pets');
       collection: 'user',
       via: 'pets'
     }
+
+// associate user_id 10 with pet_id 300 and 301
+await User.addToCollection(10, 'pets', [300, 301])
+
+const userWithPets = User.findOne('10').populate('pets')
 ```
 
 ### connecting to mysql db
