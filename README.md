@@ -107,6 +107,23 @@ module.exports = {
 };
 ```
 
+### query syntax
+
+- `find` simple & with `WHERE` clause and `IN` clause
+```js
+Model.find({
+  name: 'Dan' // ['Dan', 'Dog'] behaves like IN
+});
+
+Model.find({
+  where: { name: 'Dan' },
+  limit: 10,
+  sort: 'createdAt DESC'
+})
+```
+
+- column keys can have there value represent another key/value pair to represent `WHERENOT` and a range of other other criteria modifyiers [see here](https://sailsjs.com/documentation/concepts/models-and-orm/query-language)
+
 ### associations
 
 - in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
