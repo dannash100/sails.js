@@ -265,5 +265,5 @@ module.exports = {
 
 ## Sockets
 
-- implements socket.io library
-
+- use ```sails.sockets``` to utilize built-in methods
+- [see docs for server-side methods](https://sailsjs.com/documentation/reference/web-sockets/sails-sockets)
