@@ -132,6 +132,10 @@ Course.find({
 });
 ```
 
+### records
+
+- a `find` or `fineOne` will return a `record`
+
 ### associations
 
 - in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
@@ -146,7 +150,7 @@ Course.find({
 // models/User.js
  pets: {
       collection: 'pet',
-      via: 'owners'
+      via: 'owners'  // consider via the join point: 2 values that point to each other
     }
 // models/Pets.js
   owners: {
@@ -191,6 +195,13 @@ module.exports.datastores = {
 - automatic: in `config/blueprints.js` set actions to true.
 - manual: bind routes manually in config/routes `POST /route/to/hit': 'action/to/hit`
   [see official docs](https://sailsjs.com/documentation/concepts/actions-and-controllers/routing-to-actions)
+
+### middleware
+
+- code that runs before or after your route-handling code
+- sails is compatible with express middleware.
+- defined in `config/http.js`
+
 
 ## config
 
@@ -252,8 +263,7 @@ module.exports = {
 };
 ```
 
-## middleware
+## Sockets
 
-- code that runs before or after your route-handling code
-- sails is compatible with express middleware.
-- defined in `config/http.js`
+- implements socket.io library
+
