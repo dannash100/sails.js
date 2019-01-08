@@ -112,6 +112,8 @@ module.exports = {
 - in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
 - depending on type of link, associative attributes can be set in a create or update call and specilized model methods.
 - associations are not always returned when retreiving records with `.find()` instead you declare which  associations to retreive by using the `populate()` method
+- if a model has one association use `model` if it is many use `collection` and `via`
+- [see official docs for more information](https://sailsjs.com/documentation/concepts/models-and-orm/associations)
 
 - add a reference to another model in a **many to many** relationship
 ```js
@@ -131,6 +133,15 @@ await User.addToCollection(10, 'pets', [300, 301])
 
 const userWithPets = User.findOne('10').populate('pets')
 ```
+
+### error handling
+
+- when calling model methods use the `try, catch` method.
+- return modified errors with `.intercept((err), fn)`
+
+### lifecycle callbacks
+
+-  process data in some way before saving to a database define `beforeCreate` in model
 
 ### connecting to mysql db
 
