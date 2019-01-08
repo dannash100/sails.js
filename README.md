@@ -99,40 +99,49 @@ module.exports = {
 ```js
 module.exports = {
   attributes: {
-    nameOnMenu: { type: 'string', required: true },
-    price: { type: 'string', required: true },
-    percentRealMeat: { type: 'number', defaultsTo: 20, columnType: 'FLOAT' },
-    numCalories: { type: 'number' },
-  },
+    nameOnMenu: { type: "string", required: true },
+    price: { type: "string", required: true },
+    percentRealMeat: { type: "number", defaultsTo: 20, columnType: "FLOAT" },
+    numCalories: { type: "number" }
+  }
 };
 ```
 
 ### query syntax
 
 - `find` simple & with `WHERE` clause and `IN` clause
+
 ```js
 Model.find({
-  name: 'Dan' // ['Dan', 'Dog'] behaves like IN
+  name: "Dan" // ['Dan', 'Dog'] behaves like IN
 });
 
 Model.find({
-  where: { name: 'Dan' },
+  where: { name: "Dan" },
   limit: 10,
-  sort: 'createdAt DESC'
-})
+  sort: "createdAt DESC"
+});
 ```
 
 - column keys can have there value represent another key/value pair to represent `WHERENOT` and a range of other other criteria modifyiers [see here](https://sailsjs.com/documentation/concepts/models-and-orm/query-language)
+
+```js
+Model.find({ age: { "<": 30 } });
+Course.find({
+  subject: { contains: "music" }
+});
+```
 
 ### associations
 
 - in addition to literal types like strings and numbers, attributes can represent links to other records in a datastore, this works like a table join
 - depending on type of link, associative attributes can be set in a create or update call and specilized model methods.
-- associations are not always returned when retreiving records with `.find()` instead you declare which  associations to retreive by using the `populate()` method
+- associations are not always returned when retreiving records with `.find()` instead you declare which associations to retreive by using the `populate()` method
 - if a model has one association use `model` if it is many use `collection` and `via`
 - [see official docs for more information](https://sailsjs.com/documentation/concepts/models-and-orm/associations)
 
 - add a reference to another model in a **many to many** relationship
+
 ```js
 // models/User.js
  pets: {
@@ -158,7 +167,7 @@ const userWithPets = User.findOne('10').populate('pets')
 
 ### lifecycle callbacks
 
--  process data in some way before saving to a database define `beforeCreate` in model
+- process data in some way before saving to a database define `beforeCreate` in model
 
 ### connecting to mysql db
 
@@ -195,7 +204,8 @@ module.exports.datastores = {
 - [official docs for details](https://sailsjs.com/documentation/concepts/file-uploads)
 
 ```js
-req.file("filename").upload({
+req.file("filename").upload(
+  {
     // don't allow the total upload size to exceed ~10MB
     maxBytes: 10000000
   },
@@ -210,42 +220,36 @@ req.file("filename").upload({
 ## helpers
 
 - use helpers to avoid code repeat
+
 ```js
-const greeting = await sails.helpers.helperName.with({name: 'Dan' });
+const greeting = await sails.helpers.helperName.with({ name: "Dan" });
 ```
-- helpers use ```exits.success``` in place of ```return```
+
+- helpers use `exits.success` in place of `return`
 - `api/helpers/helper-name.js`
 - async by default turn of with `sync: true`
 - [see official docs for details on advanced exception handling](https://sailsjs.com/documentation/concepts/helpers)
 
 ```js
 module.exports = {
+  friendlyName: "Format welcome message",
 
-  friendlyName: 'Format welcome message',
-
-
-  description: 'Return a personalized greeting based on the provided name.',
-
+  description: "Return a personalized greeting based on the provided name.",
 
   inputs: {
-
     name: {
-      type: 'string',
-      example: 'Ami',
-      description: 'The name of the person to greet.',
+      type: "string",
+      example: "Ami",
+      description: "The name of the person to greet.",
       required: true
     }
-
   },
 
-
-  fn: async function (inputs, exits) {
+  fn: async function(inputs, exits) {
     var result = `Hello, ${inputs.name}!`;
     return exits.success(result);
   }
-
 };
-
 ```
 
 ## middleware
